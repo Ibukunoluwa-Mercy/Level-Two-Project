@@ -101,7 +101,7 @@ const createForm = () => {
     } else if (firstPassword != secondPassword) {
         customAlert('input the correct information')
     } else if (firstPassword == secondPassword) {
-        customAlert('registration successful', "login.html")
+        customAlert('registration successful, proceed to the login page', "login.html")
     }
 
     const newUser = {
@@ -136,7 +136,7 @@ const loginForm = () => {
         const storedEmail = userData.email || "";
         const storedPassword = userData.password || "";
         if (inputEmail !== storedEmail || inputPassword !== storedPassword) {
-            customAlert('input the correct information')
+            customAlert('input the correct information, kindly create an account', "createaccount.html")
         } else {
             customAlert('login successful', "index.html")
             const loggedInUser = {
