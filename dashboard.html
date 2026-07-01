@@ -149,50 +149,50 @@
 
     <script src="script.js"></script>
 
-<script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js";
-    import { getAuth, onAuthStateChanged} from "https://www.gstatic.com/firebasejs/12.15.0/firebase-auth.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-auth.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
 
-    // Your web app's Firebase configuration
-    const firebaseConfig = {
-        apiKey: "AIzaSyBmD94LuTA50thW3GvWWrVsVHhGWYqJru0",
-        authDomain: "level-2-project-f94fb.firebaseapp.com",
-        projectId: "level-2-project-f94fb",
-        storageBucket: "level-2-project-f94fb.firebasestorage.app",
-        messagingSenderId: "440123382301",
-        appId: "1:440123382301:web:c69c61d2c7682ba31644f4"
-    };
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBmD94LuTA50thW3GvWWrVsVHhGWYqJru0",
+            authDomain: "level-2-project-f94fb.firebaseapp.com",
+            projectId: "level-2-project-f94fb",
+            storageBucket: "level-2-project-f94fb.firebasestorage.app",
+            messagingSenderId: "440123382301",
+            appId: "1:440123382301:web:c69c61d2c7682ba31644f4"
+        };
 
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
 
-    let userName;
-    let email;
+        let userName;
+        let email;
 
 
-       onAuthStateChanged(auth, (user) => {
-        if (user) {
-            console.log(user);
-            userName = user.displayName
-            email = user.email
-            show.innerHTML = `
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                console.log(user);
+                userName = user.displayName
+                email = user.email
+                show.innerHTML = `
             <h4>Welcome ${userName}</h4>
             <h4>Your Email is ${email}</h4>
             `
                 console.log(userName, email);
 
-        } else {
-            setTimeout(() => {
-                window.location.href = 'login.html'
-            }, 1000);
-        }
-    });
+            } else {
+                setTimeout(() => {
+                    window.location.href = 'login.html'
+                }, 1000);
+            }
+        });
 
-</script>
+    </script>
 
 </body>
 
