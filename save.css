@@ -503,3 +503,287 @@
             transform: scale(1.05);
             background-color: #0052c4;
         }
+
+        /* =====================================================
+           @media (max-width: 1000px)
+           Sidebar slides off screen; content fills full width;
+           cards shrink so next card peeks into view.
+        ===================================================== */
+        @media (max-width: 1000px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+                z-index: 200;
+                box-shadow: 4px 0 20px rgba(0, 0, 0, 0.08);
+            }
+
+            .sidebar.active {
+                transform: translateX(0);
+            }
+
+            .content {
+                margin-left: 0;
+                padding: 30px 25px;
+            }
+
+            .save-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 25px;
+                margin-bottom: 35px;
+            }
+
+            .amount {
+                font-size: 46px;
+            }
+
+            /* Cards: narrower so next card peeks into view */
+            .saving-card {
+                min-width: 230px;
+                height: 135px;
+            }
+
+            .saving-card.add-card {
+                min-width: 110px;
+            }
+
+            /* Carousel card same size as siblings */
+            #carouselExample {
+                min-width: 230px;
+                height: 135px;
+            }
+
+            #carouselExample .saving-card {
+                min-width: 100%;
+                height: 100%;
+            }
+        }
+
+        /* =====================================================
+           @media screen and (max-width: 768px)
+           Mobile view — matches the screenshot closely.
+           Compact cards, stacked header, thin arrow buttons.
+        ===================================================== */
+        @media screen and (max-width: 768px) {
+            .top-nav {
+                padding: 12px 20px;
+            }
+
+            .seed-badge {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .sidebar {
+                width: 220px;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+                z-index: 200;
+                box-shadow: 4px 0 20px rgba(0, 0, 0, 0.08);
+            }
+
+            .sidebar.active {
+                transform: translateX(0);
+            }
+
+            .content {
+                margin-left: 0;
+                padding: 20px 16px;
+            }
+
+            .save-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+                margin-bottom: 28px;
+            }
+
+            .amount {
+                font-size: 38px;
+            }
+
+            .add-cash-section h4 {
+                font-size: 14px;
+            }
+
+            .cash-buttons {
+                gap: 8px;
+            }
+
+            .cash-buttons button {
+                padding: 8px 14px;
+                font-size: 12px;
+            }
+
+            .section-title {
+                font-size: 17px;
+                margin-bottom: 16px;
+            }
+
+            .savings-grid-section {
+                margin-bottom: 35px;
+            }
+
+            /* Tight horizontal scroll strip —
+               right padding lets the next card peek in */
+            .savings-grid {
+                flex-direction: column;
+                gap: 12px;
+                padding-right: 30px;
+                padding-bottom: 6px;
+            }
+
+            /* Compact cards matching screenshot proportions */
+            .saving-card {
+                min-width: 175px;
+                height: 115px;
+                padding: 14px 16px;
+                gap: 12px;
+                border-radius: 10px;
+            }
+
+            .saving-card.add-card {
+                min-width: 90px;
+            }
+
+            .card-icon img {
+                width: 55px !important;
+            }
+
+            .card-info h4 {
+                font-size: 13px;
+                margin-bottom: 5px;
+            }
+
+            .plus-circle {
+                width: 38px;
+                height: 38px;
+                font-size: 15px;
+            }
+
+            /* Carousel card same size as siblings */
+            #carouselExample {
+                min-width: 175px;
+                height: 115px;
+            }
+
+            #carouselExample .saving-card {
+                min-width: 100%;
+                height: 100%;
+                padding: 14px 16px;
+            }
+
+            /* Smaller arrow buttons */
+            #carouselExample .carousel-control-prev,
+            #carouselExample .carousel-control-next {
+                width: 28px;
+                height: 28px;
+            }
+
+            #carouselExample .carousel-control-prev {
+                left: -12px;
+            }
+
+            #carouselExample .carousel-control-next {
+                right: -12px;
+            }
+
+            #carouselExample .carousel-control-prev-icon,
+            #carouselExample .carousel-control-next-icon {
+                width: 12px;
+                height: 12px;
+            }
+
+            .fab {
+                bottom: 20px;
+                right: 20px;
+                width: 48px;
+                height: 48px;
+            }
+        }
+
+        /* =====================================================
+           @media screen and (min-width: 768px) and (max-width: 1024px)
+           Tablet view — slimmer sidebar stays visible,
+           cards are medium-sized, header stacks vertically.
+        ===================================================== */
+        @media screen and (min-width: 768px) and (max-width: 1024px) {
+            .sidebar {
+                width: 200px;
+            }
+
+            .content {
+                margin-left: 200px;
+                padding: 30px 28px;
+            }
+
+            .save-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 28px;
+                margin-bottom: 38px;
+            }
+
+            .amount {
+                font-size: 46px;
+            }
+
+            .section-title {
+                font-size: 18px;
+            }
+
+            /* Narrower cards with right padding peek effect */
+            .savings-grid {
+                gap: 14px;
+                padding-right: 24px;
+            }
+
+            .saving-card {
+                min-width: 210px;
+                height: 125px;
+                padding: 16px 18px;
+            }
+
+            .saving-card.add-card {
+                min-width: 100px;
+            }
+
+            .card-icon img {
+                width: 65px !important;
+            }
+
+            .card-info h4 {
+                font-size: 14px;
+            }
+
+            /* Carousel card same size as siblings */
+            #carouselExample {
+                min-width: 210px;
+                height: 125px;
+            }
+
+            #carouselExample .saving-card {
+                min-width: 100%;
+                height: 100%;
+                padding: 16px 18px;
+            }
+
+            #carouselExample .carousel-control-prev,
+            #carouselExample .carousel-control-next {
+                width: 30px;
+                height: 30px;
+            }
+
+            #carouselExample .carousel-control-prev-icon,
+            #carouselExample .carousel-control-next-icon {
+                width: 13px;
+                height: 13px;
+            }
+        }
