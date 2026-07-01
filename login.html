@@ -243,7 +243,7 @@
                     </div>
                     <div class="input">
                         <input type="password" placeholder="Password" required id="yourPassword">
-                        <span><i class="fa-regular fa-eye"></i></span>
+                            <span id="togglePassword" onclick="togglePasswordVisibility()"><i id="eyeIcon" class="fa-regular fa-eye"></i></span>
                     </div>
                     <div class="password">
                         <a href="#">Forgot password?</a>
@@ -269,6 +269,22 @@
     </div>
 </body>
 <script src="script.js"></script>
+<script>
+    function togglePasswordVisibility() {
+        const passwordInput = document.getElementById('yourPassword');
+        const eyeIcon = document.getElementById('eyeIcon');
+
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            eyeIcon.classList.remove('fa-eye');
+            eyeIcon.classList.add('fa-eye-slash');
+        } else {
+            passwordInput.type = 'password';
+            eyeIcon.classList.remove('fa-eye-slash');
+            eyeIcon.classList.add('fa-eye');
+        }
+    }
+</script>
 
 <script type="module">
     // Import the functions you need from the SDKs you need
